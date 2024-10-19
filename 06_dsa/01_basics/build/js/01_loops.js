@@ -1,8 +1,8 @@
 "use strict";
 //  Question 1: Sum of all natural numbers from 1 to n
 function sumOfNum(n) {
-    let sum = 0;
-    for (let i = 1; i <= n; i++) {
+    var sum = 0;
+    for (var i = 1; i <= n; i++) {
         sum += i;
     }
     return sum;
@@ -10,9 +10,9 @@ function sumOfNum(n) {
 // console.log(sumOfNum(3));
 //  Question 2: Sum of digits of a number
 function sumOfDigits(n) {
-    let sum = 0;
-    let copy = n;
-    for (let i = 0; i <= n; i++) {
+    var sum = 0;
+    var copy = n;
+    for (var i = 0; i <= n; i++) {
         sum += copy % 10;
         copy = Math.floor(copy / 10);
     }
@@ -21,8 +21,8 @@ function sumOfDigits(n) {
 // console.log(sumOfDigits(1234));
 //  Question 3: Count the number of digits of a number
 function countDigits(n) {
-    let count = 0;
-    let copy = Math.abs(n);
+    var count = 0;
+    var copy = Math.abs(n);
     while (copy > 0) {
         copy = Math.floor(copy / 10);
         count++;
@@ -32,8 +32,8 @@ function countDigits(n) {
 // console.log(countDigits(-1234));
 //  Question 4: Check if a number is palindrome
 function checkNumPalindrome(n) {
-    let copy = n;
-    let reversedNum = 0;
+    var copy = n;
+    var reversedNum = 0;
     while (copy > 0) {
         reversedNum = reversedNum * 10 + (copy % 10);
         copy = Math.floor(copy / 10);
@@ -58,8 +58,8 @@ function fibOfNum2(n) {
         return 0;
     if (n === 1)
         return 1;
-    let fibArr = [0, 1];
-    for (let i = 3; i <= n; i++) {
+    var fibArr = [0, 1];
+    for (var i = 3; i <= n; i++) {
         fibArr[i - 1] = fibArr[i - 2] + fibArr[i - 3];
     }
     return fibArr[n - 1];
@@ -70,9 +70,9 @@ function fibOfNum3(n) {
         return 0;
     if (n === 1)
         return 1;
-    let a = 0, b = 1;
-    for (let i = 3; i <= n; i++) {
-        const next = a + b;
+    var a = 0, b = 1;
+    for (var i = 3; i <= n; i++) {
+        var next = a + b;
         a = b;
         b = next;
     }
@@ -85,8 +85,8 @@ Given an array nums containing n distinct numbers in the range [0, n],
 return the only number in the range that is missing from the array.
 */
 function identifyMissing(arr) {
-    let missingNum;
-    for (let i = 0; i < arr.length; i++) {
+    var missingNum;
+    for (var i = 0; i < arr.length; i++) {
         if (i !== arr[i]) {
             missingNum = i;
         }
@@ -98,8 +98,8 @@ function identifyMissing(arr) {
 //Context is number should start from 0 to n and only one number is missing
 //missingNumber = sum of number from 0 to n - sum of actual numbers in array
 function identifyMissing2(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
         sum += arr[i];
     }
     return (arr.length * (arr.length + 1)) / 2 - sum;
@@ -107,8 +107,8 @@ function identifyMissing2(arr) {
 // console.log(identifyMissing2([0, 1, 2, 3, 5]));
 // Question-7:Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
 function findCountOfOdd(low, high) {
-    let count = 0;
-    for (let i = low; i <= high; i++) {
+    var count = 0;
+    for (var i = low; i <= high; i++) {
         if (i % 2 === 0) {
             continue;
         }
@@ -137,8 +137,8 @@ function itsPowerOfTwo(n) {
 //Question-9: Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
 // You must not use any built-in exponent function or operator.
 function squareRoot(n) {
-    let root = 0;
-    for (let i = n; i >= 0; i--) {
+    var root = 0;
+    for (var i = n; i >= 0; i--) {
         if (i * i === n) {
             root = i;
             return root;
